@@ -40,8 +40,58 @@ class _HomePageState extends State<Homepage> {
         width: size.width,
         height: size.height,
         padding: const EdgeInsets.only(top:70, left:10, right:10),
+        color: _constants.primaryColor.withOpacity(.2),
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                height: size.height * .7,
+                decoration: BoxDecoration(
+                  gradient: _constants.linearGradientBlue,
+                  borderRadius: BorderRadius.circular(20), 
+                  boxShadow: [
+                    BoxShadow(
+                      color: _constants.primaryColor.withOpacity(.6),
+                      spreadRadius: 5,
+                      blurRadius: 10,
+                      offset: const Offset(0, 3),
+                    )
+                  ]
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image.asset('assets/menu.png', width: 35, height: 35),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image.asset("assets/pin.png", width: 20),
+                            const SizedBox(width: 3),
+                            Text(location, style: const TextStyle(color: Colors.white, fontSize: 16)),
+                            IconButton(onPressed: (){}, icon: const Icon(Icons.keyboard_arrow_down, color: Colors.white, size: 20,))
+                          ],
+                        ), //Row for location...
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset("assets/profile.png", width: 35, height: 35,),
+                        )
+                      ],
+                    ), //Row for menu and location...
+                    SizedBox(
+                      height: 160,
+                      child: Image.asset("assets/$weatherIcon"),
+                    )
+                  ],
+                ),
+              )
+            ]),
       )
-    )
+    );
 
   }
 }
