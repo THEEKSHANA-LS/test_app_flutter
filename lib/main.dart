@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/pages/homePage.dart';
+import 'pages/homePage.dart';
 
-void main(){
+void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  @override 
-  Widget build(BuildContext context){
-    return MaterialApp(
-      title : "Fluter Demo",
-      home : Homepage(),
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      title: "Flutter Weather App",
       debugShowCheckedModeBanner: false,
+      home: Homepage(),
     );
-
   }
 }
